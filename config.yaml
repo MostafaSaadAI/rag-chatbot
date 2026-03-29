@@ -1,0 +1,16 @@
+﻿chunker:
+  chunk_size: 500
+  overlap: 50
+
+embedding_model:
+  name: "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+
+llm_model:
+  name: "google/flan-t5-base"
+  task: "text2text-generation"
+  max_tokens: 100
+  system_message: "You are a helpful assistant."
+
+vector_store:
+  type: "faiss"
+  top_k: 3
