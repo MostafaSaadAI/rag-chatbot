@@ -44,12 +44,10 @@ class FileLoader:
         """
         try:
             if path.startswith("http"):
-                # لو رابط مشاركة مباشر
                 response = requests.get(path)
                 response.raise_for_status()
                 return response.text
             else:
-                # لو ملف محلي متزامن مع Google Drive
                 return self.load_pdf(path) if path.endswith(".pdf") else self.load_txt(path)
         except Exception as e:
             print(f"Error loading from Drive: {e}")
